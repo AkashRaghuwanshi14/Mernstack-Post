@@ -1,0 +1,152 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+
+html,body,#root{
+  height:100%;
+  width:100%;
+}
+
+
+
+/* Container for centering the form on the page */
+.create-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* The "Card" style for the form */
+.create-post form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Styling text and file inputs */
+.create-post input[type='text'],
+.create-post input[type='file'] {
+  padding: 12px 15px;
+  border: 1.5px solid #e1e4e8;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Focus state for the text input */
+.create-post input[type='text']:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Making the file input look cleaner */
+.create-post input[type='file'] {
+  background-color: #fafbfc;
+  cursor: pointer;
+}
+
+/* The Submit Button */
+.create-post button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s active;
+}
+
+.create-post button:hover {
+  background-color: #0056b3;
+}
+
+.create-post button:active {
+  transform: scale(0.98);
+}
+
+
+/* Background and overall spacing */
+.feed-container {
+  background-color: #f0f2f5;
+  padding: 40px 5%;
+  min-height: 100vh;
+}
+
+/* The Grid Logic */
+.feed-grid {
+  display: grid;
+  /* This creates columns that are at least 280px wide */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.post-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container to keep heights uniform */
+.image-wrapper {
+  width: 100%;
+  height: 250px; /* Fixed height for a clean grid */
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image to fill the box perfectly */
+  transition: transform 0.5s ease;
+}
+
+.post-card:hover img {
+  transform: scale(1.1); /* Subtle zoom effect on hover */
+}
+
+/* Text area */
+.post-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.post-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 500;
+  /* Truncate text if it's too long (3 lines max) */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
